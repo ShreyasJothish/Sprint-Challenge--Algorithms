@@ -93,3 +93,5 @@ while low < high:
     else search for f in higher floors
         low = mid + 1
  ```
+ 
+ Determining the exact floor can be done at the end of while loop... This I need to check with code to find of by one case...
