@@ -1,3 +1,5 @@
+## Exercise I
+
 ```
 a)  a = 0
     while (a < n * n * n):
@@ -46,3 +48,6 @@ c)  def bunnyEars(bunnies):
 
 ### Answer: 
 The recursive function calls itself n times. So complexity if O(n)
+
+## Exercise II
+
