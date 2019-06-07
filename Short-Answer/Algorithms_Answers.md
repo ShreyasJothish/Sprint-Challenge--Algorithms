@@ -51,3 +51,36 @@ The recursive function calls itself n times. So complexity if O(n)
 
 ## Exercise II
 
+## Understanding the Problem:
+
+n - Number of Stories building
+f - Cut-off or Limit for egg breaking. 
+If eggs are dropped from this floor or higher then it breaks.
+If eggs are dropped form floor lower than f, then it wont break.
+
+Problem is to find the value of f.
+
+## Plan
+
+Brute force method for handling this problem would be to drop an egg from each floor and determine the value of f.
+
+### Pseudo code
+
+for i between 0 to n
+    drop an egg at each floor
+    
+    if egg breaks, then return i - 1
+    
+This logic has complexity of O(n).
+
+However since we are talking of n story building, we can consider it to be a sorted array of floors.
+So instead we can use binary search algorithm. Start by dropping an egg from middle floor of building. 
+If it breaks we need to search for f downwards else we should search for f upwards.
+
+This will give complexity of O(logn) since we are cutting the search by half each time.
+       
+
+
+
+
+
