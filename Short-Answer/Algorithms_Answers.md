@@ -66,11 +66,13 @@ Brute force method for handling this problem would be to drop an egg from each f
 
 ### Pseudo code
 
+```
 for i between 0 to n
     drop an egg at each floor
     
     if egg breaks, then return i - 1
-    
+```
+
 This logic has complexity of O(n).
 
 However since we are talking of n story building, we can consider it to be a sorted array of floors.
@@ -78,9 +80,16 @@ So instead we can use binary search algorithm. Start by dropping an egg from mid
 If it breaks we need to search for f downwards else we should search for f upwards.
 
 This will give complexity of O(logn) since we are cutting the search by half each time.
-       
 
+```
+low = 0
+high = n
 
-
-
-
+while low < high:
+    mid = (high + low) // 2
+    drop egg from middle
+    if egg breaks, then search for f in lower floors
+        high = mid -1
+    else search for f in higher floors
+        low = mid + 1
+ ```
