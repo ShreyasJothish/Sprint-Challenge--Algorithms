@@ -22,7 +22,7 @@ b)  sum = 0
             l += 1
             sum += 1
 ```
-###Answer: 
+### Answer: 
 
 The run time complexity of above code is O(n^3).
 For relatively large values of n, following is the complexity of each for loop.
@@ -36,4 +36,13 @@ for l in range(k + 1, 10 + k): - O(1) - Loop is not dependent on n and shall rem
 
 So overall runtime complexity is O(n^3)
 
+```
+c)  def bunnyEars(bunnies):
+      if bunnies == 0:
+        return 0
 
+      return 2 + bunnyEars(bunnies-1)
+```
+
+### Answer: 
+The recursive function calls itself n times. So complexity if O(n)
