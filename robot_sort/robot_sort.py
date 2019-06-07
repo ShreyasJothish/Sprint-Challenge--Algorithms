@@ -100,47 +100,47 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
-        # Using logic of bubble sort.
-        pdb.set_trace()
-        self.set_light_on()
 
-        # Assuming the robot is at 0th index of list as part of
-        # construction. Also we can use move_to_start().
-        # self.move_to_start()
+        while True:
 
-        while self.light_is_on():
-            self.set_light_off()
-
-            # Ensure the list traversal starts form 0th index
-            # self.move_to_start()
-            
-            # Pickup the item at 0th position
             self.swap_item()
-
-            # Traverse the list one item at a time.
+            
             while self.can_move_right():
                 self.move_right()
+
+                # print(f'in hand {self._item}')
+                # print(f'at position {self._list[self._position]}')
                 
-                # Swap if item at position is greater than item in hand
-                if self.compare_item() == -1:
-                    self.set_light_on()
+                # Swap if the held item's value is greater 
+                if self.compare_item() == 1:
                     self.swap_item()
+
+
+            # print('Check point 1')
+            # print(f'Robo : {self._item}')
+            # print(f'List : {self._list}')
+
+            if self.compare_item() == None:
+                self.swap_item()
+                break
             
             while self.can_move_left():
-                # After traversing the list swap items
-                if self.compare_item() == 1:
-                    self.set_light_on()
-                    self.swap_item()
-
                 self.move_left()
-
+                
                 if self.compare_item() == None:
                     self.swap_item()
                     break
 
-            print(self._list)
-            print(self._item)
+            
+            # print('Check point 2')
+            # print(f'Robo : {self._item}')
+            # print(f'List : {self._list}')
 
+            if self.can_move_right():
+                self.move_right()
+            else:
+                break
+            
 
     def move_to_start(self):
         # This function is used to reset the robot to
@@ -156,7 +156,7 @@ if __name__ == "__main__":
     """
     l = [15, 41, 58, 49, 26, 4, 28, 8, 61, 60, 65, 21, 78, 14, 35, 90, 54, 5, 0, 87, 82, 96, 43, 92, 62, 97, 69, 94, 99, 93, 76, 47, 2, 88, 51, 40, 95, 6, 23, 81, 30, 19, 25, 91, 18, 68, 71, 9, 66, 1, 45, 33, 3, 72, 16, 85, 27, 59, 64, 39, 32, 24, 38, 84, 44, 80, 11, 73, 42, 20, 10, 29, 22, 98, 17, 48, 52, 67, 53, 74, 77, 37, 63, 31, 7, 75, 36, 89, 70, 34, 79, 83, 13, 57, 86, 12, 56, 50, 55, 46]
     """
-    l = [4, 3, 2, 1]
+    l = [1, 3, 4, 2]
     print(f'Input: {l}')
     robot = SortingRobot(l)
 
